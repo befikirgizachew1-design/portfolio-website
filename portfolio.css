@@ -1,0 +1,141 @@
+
+/* 1. Define the portfolio colors */
+:root {
+  --navy: #101828;
+  --white: #F8FAFC;
+  --blue: #2563EB;
+  --slate: #344054;
+}
+
+/* 2. Reset default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--navy);
+}
+
+/* 3. Navigation bar background */
+.header {
+  background-color: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* 4. Arrange the logo and links in one row */
+.navbar {
+  max-width: 1200px;
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* 5. Style the logo */
+.logo {
+  color: var(--white);
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+/* 6. Arrange navigation links horizontally */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* 7. Highlight the current page link */
+.nav-links a.active {
+  color: #60A5FA;
+}
+
+/* 8. Hover effect for ordinary links */
+.nav-links a:hover {
+  color: #60A5FA;
+}
+
+/* 9. Style the Contact button */
+.nav-links a.contact-btn {
+  display: inline-block;
+  background-color: var(--blue);
+  color: #FFFFFF;
+  padding: 11px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a.contact-btn:hover {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+}
+
+/* 10. Add space between the page sections */
+main section {
+  min-height: 60vh;
+  padding: 100px 30px;
+  scroll-margin-top: 76px;
+}
+
+main section h1,
+main section h2 {
+  margin-bottom: 16px;
+}
+
+/* 11. Adjust the navigation for small screens */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 18px 16px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .nav-links a.contact-btn {
+    padding: 9px 13px;
+  }
+
+  main section {
+    padding: 70px 20px;
+  }
+}
