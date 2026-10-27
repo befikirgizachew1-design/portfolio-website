@@ -6,8 +6,9 @@
   --white: #f8fafc;
   --gray: #9ca3af;
   --panel: #12151f;
-  --line: #232838;
+  --line: #2d2338;
   color-scheme: dark;
+  --unique:#540c4b;
 }
 *,
 *::before,
@@ -146,7 +147,7 @@ nav ul a:hover {
   position: relative;
 }
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(
     90deg,
@@ -213,10 +214,8 @@ nav ul a:hover {
 .btn.ghost {
   background: linear-gradient(
     90deg,
-    var(--pink),
-    var(--purple),
-    var(--purple),
-    var(--pink)
+    var(--unique)
+    
   );
   color: #fff;
   box-shadow: 0 0 18px rgba(255, 62, 181, 0.45);
@@ -227,219 +226,38 @@ nav ul a:hover {
 }
 /* RIGHT SIDE: PROFILE PHOTO */
 
-.hero-image {
-  position: relative;
-  flex: 0 0 340px;
-  width: 340px;
-  height: 400px;
-  margin-right: 20px;
+.photo {
+  justify-self: center;
+  width: min(300px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 5px;
+  background: conic-gradient(
+    from 180deg,
+    var(--pink),
+    var(--purple),
+    var(--blue),
+    var(--pink)
+  );
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.5);
 }
-
-.image-frame {
-  position: relative;
-  z-index: 1;
-
+.photo .inner {
   width: 100%;
   height: 100%;
-
-  border: 2px solid #d8a7b1;
-  border-radius: 180px 180px 24px 24px;
+  border-radius: 50%;
+  background: var(--panel);
+  display: grid;
+  place-items: center;
   overflow: hidden;
-
-  background-color: #253044;
 }
-
-.image-frame img {
+.photo img {
   width: 100%;
   height: 100%;
-  display: block;
-
   object-fit: cover;
-  object-position: center;
 }
-
-.image-decoration {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  top: 18px;
-  left: 18px;
-
-  border: 2px solid #60a5fa;
-  border-radius: 180px 180px 24px 24px;
-}
-
-/* RESPONSIVE DESIGN FOR TABLETS AND PHONES */
-
-@media (max-width: 900px) {
-  .hero {
-    gap: 40px;
-    padding: 60px 6%;
-  }
-
-  .hero-image {
-    flex-basis: 280px;
-    width: 280px;
-    height: 340px;
-    margin-right: 12px;
-  }
-}
-
-@media (max-width: 650px) {
-  .hero {
-    min-height: auto;
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 50px 6% 60px;
-    gap: 45px;
-  }
-
-  .hero-content {
-    width: 100%;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-image {
-    flex: none;
-    width: 240px;
-    height: 285px;
-    margin-right: 10px;
-  }
-
-  .hero-note {
-    line-height: 1.8;
-  }
-}
-
-/* ===== NEON DARK COLOR PALETTE ===== */
-
-:root {
-  --bg: #0b0d14;
-  --pink: #ff3eb5;
-  --purple: #a855f7;
-  --blue: #e03bf6;
-  --white: #f8fafc;
-  --gray: #bfc3ca;
-}
-
-/* Main website background */
-body {
-  background-color: var(--bg);
+.photo .initials {
+  font:
+    800 4.5rem Sora,
+    sans-serif;
   color: var(--white);
-}
-
-/* ===== NAVIGATION BAR ===== */
-
-.navbar {
-  background-color: var(--bg);
-  border-bottom: 1px solid #25283a;
-}
-
-.logo {
-  color: var(--white);
-}
-
-.logo span {
-  color: var(--pink);
-}
-
-.nav-links a {
-  color: var(--white);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--pink);
-}
-
-/* Contact button */
-.nav-links a.contact-btn {
-  background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
-  color: var(--white);
-}
-
-.nav-links a.contact-btn:hover {
-  opacity: 0.85;
-}
-
-/* ===== HOME / HERO SECTION ===== */
-
-.hero {
-  background-color: var(--bg);
-}
-
-.hero-greeting {
-  color: var(--pink);
-}
-
-.hero-content h1 {
-  color: var(--white);
-}
-
-/* Colorful dot after your name */
-.hero-content h1 span {
-  color: var(--pink);
-}
-
-/* Professional title */
-.hero-content h2 {
-  color: var(--blue);
-}
-
-.hero-description {
-  color: var(--gray);
-}
-
-/* ===== HERO BUTTONS ===== */
-
-.btn-primary {
-  background: linear-gradient(100deg, var(--pink), var(--purple), var(--blue));
-  color: var(--white);
-  border: none;
-}
-
-.btn-primary:hover {
-  box-shadow: 0 0 20px #a855f755;
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  color: var(--white);
-  border: 1px solid var(--blue);
-}
-
-.btn-outline:hover {
-  background-color: var(--blue);
-  color: var(--white);
-}
-
-/* ===== PROFILE PHOTO ===== */
-
-.image-frame {
-  border: 2px solid var(--pink);
-  box-shadow:
-    -5px 0 18px #ff3eb555,
-    5px 0 18px #3b82f655;
-}
-
-.image-decoration {
-  border: 2px solid var(--blue);
-}
-
-/* Small decorative dot */
-.hero-note {
-  color: var(--gray);
-}
-
-.hero-note span {
-  background-color: var(--pink);
 }
