@@ -70,8 +70,10 @@ nav {
 nav .wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 64px;
+  max-width: none;
+  padding: 0 9rem ;
 }
 .logo {
   font:
@@ -87,7 +89,7 @@ nav ul {
   display: flex;
   gap: 1.6rem;
   list-style: none;
-  margin: 0;
+  margin-left: auto;
   padding: 0;
 }
 nav ul a {
@@ -111,9 +113,6 @@ nav ul a:hover {
   }
   .logo {
     display: none;
-  }
-  nav .wrap {
-    justify-content: center;
   }
 }
 /* =========================
@@ -147,7 +146,7 @@ nav ul a:hover {
   position: relative;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: rem;
   font-weight: 800;
   background: linear-gradient(
     90deg,
@@ -159,6 +158,16 @@ nav ul a:hover {
   background-clip: text;
   color: transparent;
   filter: drop-shadow(0 0 22px rgba(255, 62, 181, 0.35));
+}
+
+.hero h1.hello {
+  font-size: 4.5rem;
+}
+
+@media (max-width: 760px) {
+  .hero h1.hello {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 760px) {
