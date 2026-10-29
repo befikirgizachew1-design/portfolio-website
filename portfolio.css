@@ -4,7 +4,7 @@
   --purple: #df54f4;
   --blue: #3b82f6;
   --white: #f8fafc;
-  --gray: #9ca3af;
+  --gray: #b2bdcd;
   --panel: #12151f;
   --line: #2d2338;
   color-scheme: dark;
@@ -87,7 +87,7 @@ nav .wrap {
 }
 nav ul {
   display: flex;
-  gap: 1.6rem;
+  gap: 3rem;
   list-style: none;
   margin-left: auto;
   padding: 0;
@@ -269,4 +269,36 @@ nav ul a:hover {
     800 4.5rem Sora,
     sans-serif;
   color: var(--white);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.about p {
+  margin: 0 0 1rem;
+  max-width: 34rem;
+}
+.facts {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+.fact {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--pink);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+.fact b {
+  display: block;
+  color: var(--white);
+  font-family: Sora, sans-serif;
+}
+@media (max-width: 760px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
 }
