@@ -302,3 +302,41 @@ nav ul a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* skills */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.skill-group {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+.skill-group h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.bar {
+  margin-bottom: 1rem;
+}
+.bar div:first-child {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+.track {
+  height: 8px;
+  background: #1b1f2d;
+  border-radius: 99px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
+}
