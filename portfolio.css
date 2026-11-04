@@ -417,3 +417,115 @@ nav ul a:hover {
 .links a:hover {
   text-shadow: 0 0 10px var(--pink);
 }
+
+
+/* =========================
+   ACHIEVEMENTS SECTION
+========================= */
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.ach-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--pink);
+  border-radius: 14px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.ach-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--purple);
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.35);
+}
+.ach-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+.ach-card h3 {
+  font-size: 1.15rem;
+}
+.ach-issuer {
+  margin: 0;
+  color: var(--white);
+  font-weight: 500;
+}
+.ach-date {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+}
+.ach-link {
+  margin-top: auto;
+  color: var(--pink);
+  font-weight: 500;
+}
+.ach-link:hover {
+  text-shadow: 0 0 10px var(--pink);
+}
+
+
+/* contact */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+}
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.8rem;
+}
+.contact li a {
+  color: var(--white);
+}
+.contact li a:hover {
+  color: var(--pink);
+}
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+input,
+textarea {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: var(--white);
+  font: inherit;
+  margin-bottom: 1.1rem;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+#status {
+  margin-top: 0.8rem;
+  color: var(--white);
+  min-height: 1.5em;
+}
+@media (max-width: 760px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
