@@ -61,7 +61,7 @@ portfolio/
 
 ## Author
 
-**Befikir Gizachew**
+**Befikir Gizachew Indiris**
 
 Software Engineering Student
 
