@@ -7,8 +7,8 @@
   --gray: #b2bdcd;
   --panel: #12151f;
   --line: #2d2338;
+  --unique: #540c4b;
   color-scheme: dark;
-  --unique:#540c4b;
 }
 *,
 *::before,
@@ -23,10 +23,12 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--gray);
-  font:
-    400 1rem/1.7 "DM Sans",
-    system-ui,
-    sans-serif;
+  font: 400 1rem/1.7 "DM Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 h1,
 h2,
@@ -58,7 +60,9 @@ h2 {
   text-shadow: 0 0 24px rgba(168, 85, 247, 0.55);
 }
 
-/* nav */
+/* =========================
+   NAVIGATION
+========================= */
 nav {
   position: sticky;
   top: 0;
@@ -70,15 +74,13 @@ nav {
 nav .wrap {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: 64px;
   max-width: none;
-  padding: 0 9rem ;
+  padding: 0 clamp(1.25rem, 6vw, 9rem);
 }
 .logo {
-  font:
-    800 1.2rem Sora,
-    sans-serif;
+  font: 800 1.2rem Sora, sans-serif;
   color: var(--white);
 }
 .logo span {
@@ -87,38 +89,36 @@ nav .wrap {
 }
 nav ul {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1.2rem, 3vw, 3rem);
   list-style: none;
-  margin-left: auto;
+  margin: 0 0 0 auto;
   padding: 0;
 }
 nav ul a {
   font-size: 0.95rem;
   padding: 0.3rem 0;
   border-bottom: 2px solid transparent;
-  transition:
-    color 0.2s,
-    border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
 nav ul a:hover {
   color: var(--white);
   border-color: var(--pink);
 }
-@media (max-width: 560px) {
-  nav ul {
-    gap: 0.9rem;
-  }
-  nav ul a {
-    font-size: 0.82rem;
-  }
-  .logo {
-    display: none;
-  }
+#menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--white);
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
+
 /* =========================
    HOME / HERO SECTION
 ========================= */
-/* hero */
 .hero {
   padding: 5rem 0 6rem;
   position: relative;
@@ -131,11 +131,7 @@ nav ul a:hover {
   height: 520px;
   right: -120px;
   top: -60px;
-  background: radial-gradient(
-    circle,
-    rgba(168, 85, 247, 0.28),
-    transparent 65%
-  );
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.28), transparent 65%);
   pointer-events: none;
 }
 .hero .wrap {
@@ -146,39 +142,20 @@ nav ul a:hover {
   position: relative;
 }
 .hero h1 {
-  font-size: rem;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
   font-weight: 800;
-  background: linear-gradient(
-    90deg,
-    var(--pink),
-    var(--purple) 55%,
-    var(--blue)
-  );
+  background: linear-gradient(90deg, var(--pink), var(--purple) 55%, var(--blue));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   filter: drop-shadow(0 0 22px rgba(255, 62, 181, 0.35));
 }
-
 .hero h1.hello {
-  font-size: 4.5rem;
-}
-
-@media (max-width: 760px) {
-  .hero h1.hello {
-    font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 760px) {
-  .hero h1 {
-    font-size: 3rem;
-  }
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  margin-bottom: 0.3rem;
 }
 .role {
-  font:
-    600 1.25rem Sora,
-    sans-serif;
+  font: 600 1.25rem Sora, sans-serif;
   color: var(--white);
   margin: 1rem 0 0.6rem;
 }
@@ -196,23 +173,13 @@ nav ul a:hover {
   display: inline-block;
   padding: 0.85rem 1.7rem;
   border-radius: 999px;
-  font:
-    600 0.95rem Sora,
-    sans-serif;
-  transition:
-    box-shadow 0.25s,
-    transform 0.25s;
+  font: 600 0.95rem Sora, sans-serif;
+  transition: box-shadow 0.25s, transform 0.25s;
   cursor: pointer;
   border: 0;
 }
 .btn.primary {
-  background: linear-gradient(
-    90deg,
-    var(--pink),
-    var(--purple),
-    var(--purple),
-    var(--pink)
-  );
+  background: linear-gradient(90deg, var(--pink), var(--purple), var(--purple), var(--pink));
   color: #fff;
   box-shadow: 0 0 18px rgba(255, 62, 181, 0.45);
 }
@@ -221,11 +188,7 @@ nav ul a:hover {
   transform: translateY(-2px);
 }
 .btn.ghost {
-  background: linear-gradient(
-    90deg,
-    var(--unique)
-    
-  );
+  background: var(--unique);
   color: #fff;
   box-shadow: 0 0 18px rgba(255, 62, 181, 0.45);
 }
@@ -233,21 +196,15 @@ nav ul a:hover {
   box-shadow: 0 0 30px rgba(255, 62, 181, 0.8);
   transform: translateY(-2px);
 }
-/* RIGHT SIDE: PROFILE PHOTO */
 
+/* profile photo */
 .photo {
   justify-self: center;
   width: min(300px, 70vw);
   aspect-ratio: 1;
   border-radius: 50%;
   padding: 5px;
-  background: conic-gradient(
-    from 180deg,
-    var(--pink),
-    var(--purple),
-    var(--blue),
-    var(--pink)
-  );
+  background: conic-gradient(from 180deg, var(--pink), var(--purple), var(--blue), var(--pink));
   box-shadow: 0 0 50px rgba(168, 85, 247, 0.5);
 }
 .photo .inner {
@@ -264,13 +221,10 @@ nav ul a:hover {
   height: 100%;
   object-fit: cover;
 }
-.photo .initials {
-  font:
-    800 4.5rem Sora,
-    sans-serif;
-  color: var(--white);
-}
 
+/* =========================
+   ABOUT
+========================= */
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -297,16 +251,13 @@ nav ul a:hover {
   color: var(--white);
   font-family: Sora, sans-serif;
 }
-@media (max-width: 760px) {
-  .about {
-    grid-template-columns: 1fr;
-  }
-}
 
-/* skills */
+/* =========================
+   SKILLS
+========================= */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
   gap: 1.5rem;
 }
 .skill-group {
@@ -340,10 +291,13 @@ nav ul a:hover {
   background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
 }
-/* projects */
+
+/* =========================
+   PROJECTS
+========================= */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
 }
 .card {
@@ -353,9 +307,7 @@ nav ul a:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition:
-    border-color 0.25s,
-    box-shadow 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 .card:hover {
   border-color: var(--purple);
@@ -365,20 +317,14 @@ nav ul a:hover {
   height: 150px;
   display: grid;
   place-items: center;
-  font:
-    800 2.2rem Sora,
-    sans-serif;
+  font: 800 clamp(1.5rem, 5vw, 2.2rem) Sora, sans-serif;
   color: var(--white);
+  text-align: center;
+  padding: 0 0.5rem;
 }
-.t1 {
-  background: linear-gradient(135deg, var(--pink), var(--purple));
-}
-.t2 {
-  background: linear-gradient(135deg, var(--purple), var(--blue));
-}
-.t3 {
-  background: linear-gradient(135deg, var(--blue), var(--pink));
-}
+.t1 { background: linear-gradient(135deg, var(--pink), var(--purple)); }
+.t2 { background: linear-gradient(135deg, var(--purple), var(--blue)); }
+.t3 { background: linear-gradient(135deg, var(--blue), var(--pink)); }
 .card .body {
   padding: 1.3rem;
   display: flex;
@@ -418,13 +364,12 @@ nav ul a:hover {
   text-shadow: 0 0 10px var(--pink);
 }
 
-
 /* =========================
-   ACHIEVEMENTS SECTION
+   ACHIEVEMENTS
 ========================= */
 .achievements {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 1.5rem;
 }
 .ach-card {
@@ -436,10 +381,7 @@ nav ul a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  transition:
-    transform 0.25s,
-    border-color 0.25s,
-    box-shadow 0.25s;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 .ach-card:hover {
   transform: translateY(-6px);
@@ -470,7 +412,6 @@ nav ul a:hover {
 .ach-link:hover {
   text-shadow: 0 0 10px var(--pink);
 }
-
 .ach-img {
   width: 100%;
   border-radius: 8px;
@@ -478,8 +419,9 @@ nav ul a:hover {
   border: 1px solid var(--line);
 }
 
-
-/* contact */
+/* =========================
+   CONTACT
+========================= */
 .contact {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -494,6 +436,7 @@ nav ul a:hover {
 }
 .contact li a {
   color: var(--white);
+  overflow-wrap: anywhere;
 }
 .contact li a:hover {
   color: var(--pink);
@@ -521,6 +464,10 @@ textarea:focus {
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
+input.bad,
+textarea.bad {
+  border-color: var(--pink);
+}
 textarea {
   min-height: 130px;
   resize: vertical;
@@ -530,9 +477,106 @@ textarea {
   color: var(--white);
   min-height: 1.5em;
 }
-@media (max-width: 760px) {
-  .contact {
-    grid-template-columns: 1fr;
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer a:hover {
+  color: var(--pink);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablets and small laptops: hamburger menu */
+@media (max-width: 900px) {
+  #menu {
+    display: block;
+  }
+  nav ul {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    background: rgba(11, 13, 20, 0.97);
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s;
+  }
+  nav ul.open {
+    max-height: 420px;
+  }
+  nav ul a {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-bottom: 0;
+    border-left: 3px solid transparent;
+  }
+  nav ul a:hover {
+    border-left-color: var(--pink);
   }
 }
 
+/* Phones and small tablets */
+@media (max-width: 760px) {
+  .hero {
+    padding: 3rem 0 4rem;
+  }
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero p {
+    margin-inline: auto;
+    font-size: 1.05rem;
+  }
+  .btns {
+    justify-content: center;
+  }
+  .photo {
+    order: -1;
+  }
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+  section {
+    padding: 3.5rem 0;
+  }
+  .btn {
+    padding: 0.8rem 1.4rem;
+  }
+  footer .wrap {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

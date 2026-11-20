@@ -3,23 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>My Portfolio</title>
-
-    <!-- Connect the CSS file -->
+    <title>Befikir Gizachew | Portfolio</title>
     <link rel="stylesheet" href="css/portfolio.css" />
   </head>
   <body>
     <nav aria-label="Main">
       <div class="wrap">
         <a href="#home" class="logo">My Portfolio<span>.</span></a>
-        <ul>
+        <button id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <ul id="links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact">contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -28,8 +26,7 @@
     <header id="home" class="hero">
       <div class="wrap">
         <div>
-          <h1 class="hello">&nbsp; &nbsp;Hello I'm</h1>
-          <br />
+          <h1 class="hello">Hello I'm</h1>
           <h1>Befikir Gizachew</h1>
           <div class="role">Web Developer &amp; UI Designer</div>
           <p>
@@ -45,16 +42,14 @@
 
         <div class="photo">
           <div class="inner">
-            <!-- Replace the initials with: <img src="your-photo.jpg" alt="Photo of Your Name"> -->
-            <span class="initials" aria-label="Photo placeholder"
-              ><img src="images/my-image.JPG" alt="my image"
-            /></span>
+            <img src="images/my-image.jpg" alt="Portrait of Befikir Gizachew" />
           </div>
         </div>
       </div>
     </header>
 
     <main>
+      <!-- About -->
       <section id="about">
         <div class="wrap">
           <h2>About me</h2>
@@ -72,15 +67,15 @@
               </p>
             </div>
             <div class="facts">
-              <div class="fact">
-                <b>Education</b>Computer Software Engineering
-              </div>
+              <div class="fact"><b>Education</b>Computer Software Engineering</div>
               <div class="fact"><b>Experience</b>2 years building websites</div>
               <div class="fact"><b>Languages</b>Amharic, English</div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Skills -->
       <section id="skills">
         <div class="wrap">
           <h2>Skills</h2>
@@ -88,88 +83,67 @@
             <div class="skill-group">
               <h3>Front-end</h3>
               <div class="bar">
-                <div><span>HTML</span><span>94%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 94%"></div>
-                </div>
+                <div><span>HTML</span><span>97%</span></div>
+                <div class="track"><div class="fill" style="width: 97%"></div></div>
               </div>
               <div class="bar">
-                <div><span> CSS</span><span>90%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 90%"></div>
-                </div>
+                <div><span>CSS</span><span>93%</span></div>
+                <div class="track"><div class="fill" style="width: 93%"></div></div>
               </div>
               <div class="bar">
-                <div><span>JavaScript</span><span>80%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 80%"></div>
-                </div>
+                <div><span>JavaScript</span><span>87%</span></div>
+                <div class="track"><div class="fill" style="width: 87%"></div></div>
               </div>
             </div>
+
             <div class="skill-group">
               <h3>Back-end</h3>
               <div class="bar">
-                <div><span>Node.js</span><span>80%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 80%"></div>
-                </div>
+                <div><span>Node.js</span><span>85%</span></div>
+                <div class="track"><div class="fill" style="width: 85%"></div></div>
               </div>
               <div class="bar">
                 <div><span>Python</span><span>70%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 75%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 70%"></div></div>
               </div>
               <div class="bar">
                 <div><span>SQL</span><span>70%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 70%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 70%"></div></div>
               </div>
               <div class="bar">
                 <div><span>Express.js</span><span>80%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 80%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 80%"></div></div>
               </div>
             </div>
+
             <div class="skill-group">
               <h3>Design &amp; tools</h3>
               <div class="bar">
                 <div><span>Git &amp; GitHub</span><span>85%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 85%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 85%"></div></div>
               </div>
               <div class="bar">
                 <div><span>Responsive design</span><span>50%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 50%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 50%"></div></div>
               </div>
               <div class="bar">
                 <div><span>UML Diagrams</span><span>85%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 85%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 85%"></div></div>
               </div>
               <div class="bar">
                 <div><span>Postman</span><span>85%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 85%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 85%"></div></div>
               </div>
               <div class="bar">
                 <div><span>Docker</span><span>85%</span></div>
-                <div class="track">
-                  <div class="fill" style="width: 85%"></div>
-                </div>
+                <div class="track"><div class="fill" style="width: 85%"></div></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Projects -->
       <section id="projects">
         <div class="wrap">
           <h2>Projects</h2>
@@ -178,45 +152,43 @@
               <div class="thumb t1">Delivery</div>
               <div class="body">
                 <h3>Fikir-Delivery</h3>
-                <p>
-                  A food Delivery with a product catalog, cart and order  tracking.
-                </p>
+                <p>A food delivery site with a product catalog, cart and order tracking.</p>
                 <div class="tags">
-                  <span>html</span><span>css</span><span>javascript</span>
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
                 </div>
                 <div class="links">
-                  <a href="https://befikirgizachew1-design.github.io/Fikir-delivery-website/">Live demo</a><a href="#">Source code</a>
+                  <a href="https://befikirgizachew1-design.github.io/Fikir-delivery-website/" target="_blank" rel="noopener">Live demo</a>
+                  <a href="#">Source code</a>
                 </div>
               </div>
             </article>
+
             <article class="card">
               <div class="thumb t2">Tasks</div>
               <div class="body">
                 <h3>Task-Management-System</h3>
-                <p>
-                  A simple app to plan work, set deadlines and track progress
-                  across teams.
-                </p>
+                <p>A simple app to plan work, set deadlines and track progress across teams.</p>
                 <div class="tags">
-                  <span>JavaScript</span><span>html</span><span>css</span>
+                  <span>JavaScript</span><span>HTML</span><span>CSS</span>
                 </div>
                 <div class="links">
-                  <a href=" https://befikirgizachew1-design.github.io/Task-Management-system/">Live demo</a><a href="#">Source code</a>
+                  <a href="https://befikirgizachew1-design.github.io/Task-Management-system/" target="_blank" rel="noopener">Live demo</a>
+                  <a href="#">Source code</a>
                 </div>
               </div>
             </article>
+
             <article class="card">
-              <div class="thumb t3">sign-up-form</div>
+              <div class="thumb t3">Sign-up</div>
               <div class="body">
                 <h3>Sign-up-form</h3>
-                <p>
-                  clean sign up form page
-                </p>
+                <p>A clean sign-up form page.</p>
                 <div class="tags">
                   <span>HTML</span><span>CSS</span>
                 </div>
                 <div class="links">
-                  <a href="https://befikirgizachew1-design.github.io/sign-up-form/">Live demo</a><a href="#">Source code</a>
+                  <a href="https://befikirgizachew1-design.github.io/sign-up-form/" target="_blank" rel="noopener">Live demo</a>
+                  <a href="#">Source code</a>
                 </div>
               </div>
             </article>
@@ -224,55 +196,31 @@
         </div>
       </section>
 
+      <!-- Achievements -->
       <section id="achievements">
         <div class="wrap">
           <h2>Achievements</h2>
-
           <div class="achievements">
             <article class="ach-card">
-              <img
-                class="ach-img"
-                src="images/Udacity.png"
-                alt="Responsive Web Design certificate"
-              />
+              <img class="ach-img" src="images/Udacity.png" alt="Udacity Programming Fundamentals certificate" />
               <h3>Programming Fundamentals</h3>
               <p class="ach-issuer">Udacity</p>
-              <p class="ach-date">june 6 2026</p>
-              <a
-                class="ach-link"
-                href="file:///C:/Users/user/OneDrive/Documents/Learn%20the%20Latest%20Tech%20Skills%3B%20Advance%20Your%20Career%20_%20Udacity.pdf"
-                target="_blank"
-                rel="noopener"
-                >View certificate</a
-              >
+              <p class="ach-date">June 6, 2026</p>
+              <a class="ach-link" href="files/udacity.pdf" target="_blank" rel="noopener">View certificate</a>
             </article>
 
             <article class="ach-card">
-              <img
-                class="ach-img"
-                src="certificate1.jpg"
-                alt="Responsive Web Design certificate"
-              />
+              <div class="ach-icon">🏆</div>
               <h3>JavaScript Algorithms</h3>
               <p class="ach-issuer">Coursera</p>
               <p class="ach-date">August 2025</p>
-              <a
-                class="ach-link"
-                href="certificate2.pdf"
-                target="_blank"
-                rel="noopener"
-                >View certificate</a
-              >
+              <a class="ach-link" href="#">View certificate</a>
             </article>
 
             <article class="ach-card">
-              <img
-                class="ach-img"
-                src="certificate1.jpg"
-                alt="Responsive Web Design certificate"
-              />
+              <div class="ach-icon">🎓</div>
               <h3>Computer Science for Python Programming</h3>
-              <p class="ach-issuer">at Harvard uh university</p>
+              <p class="ach-issuer">Harvard University</p>
               <p class="ach-date">November 2025</p>
               <a class="ach-link" href="#">Learn more</a>
             </article>
@@ -280,6 +228,7 @@
         </div>
       </section>
 
+      <!-- Contact -->
       <section id="contact">
         <div class="wrap">
           <h2>Contact</h2>
@@ -296,21 +245,27 @@
               </ul>
             </div>
             <div>
-              <label for="n">your name</label>
+              <label for="n">Your name</label>
               <input id="n" autocomplete="name" />
               <label for="e">Your email</label>
               <input id="e" type="email" autocomplete="email" />
               <label for="m">Message</label>
               <textarea id="m"></textarea>
-              <button class="btn primary" id="send" type="button">
-                Send message
-              </button>
+              <button class="btn primary" id="send" type="button">Send message</button>
               <div id="status" role="status"></div>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="wrap">
+        <span>© 2026 Befikir Gizachew. All rights reserved.</span>
+        <a href="#home">Back to top ↑</a>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
