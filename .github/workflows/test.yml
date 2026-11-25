@@ -1,0 +1,29 @@
+name: Portfolio Website Tests
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Check Portfolio Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get project code
+        uses: actions/checkout@v4
+
+      - name: Check HTML file
+        run: test -f index.html
+
+      - name: Check CSS file
+        run: test -f css/portfolio.css
+
+      - name: Check JavaScript file
+        run: test -f js/portifolio.js
+
+      - name: Display success message
+        run: echo "Portfolio file checks passed!"
